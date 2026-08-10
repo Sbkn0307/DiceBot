@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 
+from keep_alive import keep_alive
+
 import random
 
 from config import TOKEN
@@ -17,6 +19,7 @@ bot = commands.Bot(
 
 dice = DiceEvaluator()
 
+keep_alive()
 
 @bot.event
 async def on_ready():
