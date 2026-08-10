@@ -6,11 +6,16 @@ from keep_alive import keep_alive
 
 import random
 
-from config import TOKEN
 from dice import DiceEvaluator
 
 intents = discord.Intents.default()
 intents.message_content = True
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+if TOKEN:
+    client.run(TOKEN)
+else:
+    print("Tokenが見つかりませんでした")
 
 bot = commands.Bot(
     command_prefix="!",
